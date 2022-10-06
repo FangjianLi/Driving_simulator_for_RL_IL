@@ -5,6 +5,6 @@ This repository provide a driving simulator specifically for reinfrocement learn
 
 ## What you can do with the codes
 * As a driving simulator, it can collect your driving data used for imitation learning training purpose. States and actions in MDP are recorded.
-* You can load your trained autonomous driving poicy into one neighbor car and share the road with it. As a result, something interesting can be done. For example, you can play as a crazy driver and try to crash with the auonomous driving car to test its behavior in corner case. 
+* You can load your trained autonomous driving poicy into one neighbor car, and share the road with it. As a result, something interesting can be done. For example, you can play as a crazy driver and try to crash with the auonomous driving car to test its behavior in corner case. 
 
 
