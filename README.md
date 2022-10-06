@@ -8,3 +8,13 @@ This repository provide a driving simulator specifically for reinfrocement learn
 * You can load your trained autonomous driving poicy into one neighbor car, and share the road with it. As a result, something interesting can be done. For example, you can play as a crazy driver and try to crash with the auonomous driving car to test its behavior in corner case. 
 
 
+## How to run the codes
+In order to use the 3-D animation feature, you need to install the Carla. I have pre-built a Carla repository with the customized map on it (via Roadrunner). You can download my customized version via the google drive [link]()
+
+### Use the driving simulator to collect driving data 
+* use the keyboard to control (arrow keys): ```python run_simulator_keyboard.py --carla False``` (2D) or ``python run_simulator_keyboard.py --carla True``` (3D)
+* use the steering wheel and pedal to control: ```python run_simulator_pedal.py --carla False``` (2D) or ``python run_simulator_pedal.py --carla True``` (3D)
+
+### Use the driving simultaor to play together with your trained autonomous vehicle
+* use the keyboard to control (arrow keys): ```python run_simulator_keyboard_tp.py --carla False``` (2D) or ``python run_simulator_keyboard_tp.py --carla True``` (3D)
+* * use the steering wheel and pedal to control: ```python run_simulator_pedal_tp.py --carla False``` (2D) or ``python run_simulator_pedal_tp.py --carla True``` (3D)
