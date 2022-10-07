@@ -17,4 +17,9 @@ In order to use the 3-D animation feature, you need to install the Carla. I have
 
 ### Use the driving simultaor to play together with your trained autonomous vehicle
 * use the keyboard to control (arrow keys): ```python run_simulator_keyboard_tp.py --carla False``` (2D) or ```python run_simulator_keyboard_tp.py --carla True``` (3D)
-* * use the steering wheel and pedal to control: ```python run_simulator_pedal_tp.py --carla False``` (2D) or ```python run_simulator_pedal_tp.py --carla True``` (3D)
+* use the steering wheel and pedal to control: ```python run_simulator_pedal_tp.py --carla False``` (2D) or ```python run_simulator_pedal_tp.py --carla True``` (3D)
+
+### Tips
+* You can adjust the size of simulation screen via the arg ```ratio```, for example, ```python run_simulator_keyboard.py --ratio 0.5```
+* To test your own autonmous driving algorithm, you can integrate your own trained policy network in this simulator
+* The Logitech G29 steering wheels and pedals are used for this repository. It should also work with other logitech steering wheels also
