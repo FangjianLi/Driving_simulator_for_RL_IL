@@ -47,3 +47,10 @@ In order to use the 3-D animation feature, you need to install the Carla (and **
     <img src="carla_simulator.gif" width="600"/>
     <em>3D simulator (green car is controlled by human with keyboard, and yellow car is controlled by trained driving policy)</em>
 </p>
+
+
+<p>
+    <img src="human_drive.gif" width="600"/>
+    <em>Human participant with driving simulator</em>
+</p>
+
