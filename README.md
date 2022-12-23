@@ -12,6 +12,13 @@ This repository provides a driving simulator specifically for reinforcement lear
 * **Data Collection for Training**: As a driving simulator, it can collect your driving data used for imitation learning. States and actions in MDP are recorded.
 * **Testing the trained policy**: You can load your trained autonomous driving policy into one neighbor car and share the road with it. As a result, something interesting can be done. For example, you can play as a crazy driver and try to crash with the autonomous driving car to test its behavior in a corner case. 
 
+## Key dependencies
+* highway-env == 1.2.0
+* gym == 0.15.4
+* numpy == 1.16.6
+* tensorflow == 1.14.0 (to load the pretrained autonomous driving policy, which is built in tensorflow)
+* carla == 0.9.13
+
 
 ## How to run the codes
 In order to use the 3-D animation feature, you need to install the Carla (and **also run the Carla server in a separate terminal**).  I have pre-built a Carla repository with the customized map on it (via Roadrunner). You can download my customized version via the google drive [link](https://drive.google.com/drive/folders/1KbLXIEchgGKb0GSAFAfnuCtPitfwwIOd?usp=sharing)
