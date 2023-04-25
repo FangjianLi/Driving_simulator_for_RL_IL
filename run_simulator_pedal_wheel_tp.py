@@ -26,7 +26,9 @@ def argparser():
     parser.add_argument('--model_index', help='save model name', default='115model.ckpt')
     parser.add_argument("--envs_k", default="highway_manual_continuous_tp-v0")
     parser.add_argument("--envs_p", default="highway_manual_continuous_tp_carla-v0")
-    parser.add_argument("--carla", default=False, help="if to trigger Carla rendering")
+    parser.add_argument("--carla-rendering", dest="carla", action="store_true", help="Carla rendering")
+    parser.add_argument("--no-carla-rendering", dest="carla", action="store_false", help="No Carla rendering")
+    parser.set_defaults(carla=False)
     parser.add_argument('--iteration', default=1, type=int)
     parser.add_argument('--min_length', default=80000, type=int)
     parser.add_argument('--duration', default=50, type=int)
@@ -54,6 +56,8 @@ def highway_animation(args):
 
     env = StructEnv_Highway_multiagent_tp(env)
     env.reset()
+
+    print(f"Carla Mode: {args.carla}")
 
     if args.carla:
         env.reset_carla()

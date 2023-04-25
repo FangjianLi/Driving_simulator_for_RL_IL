@@ -24,7 +24,9 @@ def argparser():
     parser.add_argument('--alg', default='SAIRL/')
     parser.add_argument('--index', default='model_2/')
     parser.add_argument('--model_index', help='save model name', default='115model.ckpt')
-    parser.add_argument("--carla", default=True, help="if to trigger Carla rendering")
+    parser.add_argument("--carla-rendering", dest="carla", action="store_true", help="Carla rendering")
+    parser.add_argument("--no-carla-rendering", dest="carla", action="store_false", help="No Carla rendering")
+    parser.set_defaults(carla=True)
     parser.add_argument("--envs_k", default="highway_manual_vertical_tp-v0")
     parser.add_argument("--envs_p", default="highway_manual_vertical_tp_carla-v0")
     parser.add_argument('--iteration', default=1, type=int)
@@ -41,6 +43,8 @@ def highway_animation(args):
     trajectory_save_dir = args.traj_savedir
 
     check_and_create_dir(trajectory_save_dir)
+
+    print(f"Carla Mode: {args.carla}")
 
     if args.carla:
         env = gym.make(args.envs_p)

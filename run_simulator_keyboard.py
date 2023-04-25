@@ -20,33 +20,38 @@ def argparser():
     parser.add_argument('--alg', default='SAIRL/')
     parser.add_argument("--envs_k", default="highway_manual_vertical-v0")
     parser.add_argument("--envs_p", default="highway_manual_vertical_carla-v0")
-    parser.add_argument("--carla", default=True, help="if to trigger Carla rendering")
+    parser.add_argument("--carla-rendering", dest="carla", action="store_true", help="Carla rendering")
+    parser.add_argument("--no-carla-rendering", dest="carla", action="store_false", help="No Carla rendering")
+    parser.set_defaults(carla=False)
     parser.add_argument('--iteration', default=1, type=int)
     parser.add_argument('--min_length', default=80000, type=int)
     parser.add_argument('--duration', default=50, type=int)
 
-    parser.add_argument('--ratio', default=0.75, type=int, help="The display size ratio")
+    parser.add_argument('--ratio', default=0.75, type=float, help="The display size ratio")
 
     return parser.parse_args()
 
 
-def highway_animation(args):
-    trajectory_save_dir = args.traj_savedir
+def highway_animation(args_hw):
+    trajectory_save_dir = args_hw.traj_savedir
 
     check_and_create_dir(trajectory_save_dir)
 
-    if args.carla:
+    print(f"Carla Mode: {args_hw.carla}")
+
+    if args_hw.carla:
         env = StructEnv_Highway(gym.make(args.envs_p))
     else:
         env = StructEnv_Highway(gym.make(args.envs_k))
+
     env.config["real_time_rendering"] = True
-    env.config["duration"] = args.duration
+    env.config["duration"] = args_hw.duration
     env.config["manual_control"] = True
-    env.config["ratio"] = args.ratio
+    env.config["ratio"] = args_hw.ratio
     env.seed(256)
     env.reset_0()
 
-    if args.carla:
+    if args_hw.carla:
         env.reset_carla()
 
     observation_save = []
@@ -71,7 +76,7 @@ def highway_animation(args):
         else:
             env.obs_a = next_obs.copy()
 
-        if episode_length >= args.min_length:
+        if episode_length >= args_hw.min_length:
             env.reset()
             break
         print(time.time() - time_1)
