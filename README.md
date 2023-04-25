@@ -24,12 +24,12 @@ This repository provides a driving simulator specifically for reinforcement lear
 In order to use the 3-D animation feature, you need to install the Carla (and **also run the Carla server in a separate terminal**).  I have pre-built a Carla repository with the customized map on it (via Roadrunner). You can download my customized version via the google drive [link](https://drive.google.com/drive/folders/1KbLXIEchgGKb0GSAFAfnuCtPitfwwIOd?usp=sharing)
 
 ### Use the driving simulator to collect driving data 
-* use the keyboard to control (arrow keys): ```python run_simulator_keyboard.py --carla False``` (2D) or ```python run_simulator_keyboard.py --carla True``` (3D)
-* use the steering wheel and pedal to control: ```python run_simulator_pedal.py --carla False``` (2D) or ```python run_simulator_pedal.py --carla True``` (3D)
+* use the keyboard to control (arrow keys): ```python run_simulator_keyboard.py --no-carla-rendering``` (2D) or ```python run_simulator_keyboard.py --carla-rendering``` (3D)
+* use the steering wheel and pedal to control: ```python run_simulator_pedal.py --no-carla-renderinge``` (2D) or ```python run_simulator_pedal.py --carla-rendering``` (3D)
 
 ### Use the driving simultaor to play together with your trained autonomous vehicle
-* use the keyboard to control (arrow keys): ```python run_simulator_keyboard_tp.py --carla False``` (2D) or ```python run_simulator_keyboard_tp.py --carla True``` (3D)
-* use the steering wheel and pedal to control: ```python run_simulator_pedal_tp.py --carla False``` (2D) or ```python run_simulator_pedal_tp.py --carla True``` (3D)
+* use the keyboard to control (arrow keys): ```python run_simulator_keyboard_tp.py --no-carla-rendering``` (2D) or ```python run_simulator_keyboard_tp.py --carla-rendering``` (3D)
+* use the steering wheel and pedal to control: ```python run_simulator_pedal_tp.py --no-carla-rendering``` (2D) or ```python run_simulator_pedal_tp.py --carla-rendering``` (3D)
 
 ### Tips
 * You can adjust the size of the simulation screen via the arg ```ratio```, for example, ```python run_simulator_keyboard.py --ratio 0.5```
